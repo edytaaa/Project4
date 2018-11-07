@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Developers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="margin: auto; max-width: 600px">
+
+    <a th:href="'/investment?id=' + ${offer.getInvestment().getId()}">Powrót do listy lokali</a>
+
+    <h4><p>Lokal:</p></h4>
+
+    <table class="table table-striped">
+
+        <tr>
+            <td><b>Metraż:</b></td>
+            <td th:text="${offer.meterage}"></td>
+        </tr>
+        <tr>
+            <td><b>Numer piętra:</b></td>
+            <td th:text="${offer.floor}"></td>
+        </tr>
+        <tr>
+            <td><b>Ilości pokoi:</b></td>
+            <td th:text="${offer.rooms}"></td>
+        </tr>
+        <tr>
+            <td><b>Rzut mieszkania:</b></td>
+            <td th:text="${offer.url}"></td>
+        </tr>
+        <tr>
+            <td><b>Cena:</b></td>
+            <td th:text="${offer.price}"></td>
+        </tr>
+        <tr>
+            <td><b>Opis oferty:</b></td>
+            <td th:text="${offer.description}"></td>
+            <!--LUB: <td><textarea rows="3" th:text="${offer.description}"></textarea></td>-->
+        </tr>
+        <tr>
+            <td><b>Stan mieszkania:</b></td>
+            <td th:text="${offer.state}"></td>
+        </tr>
+        <tr>
+            <td><b>Mieszkanie promowane:</b></td>
+            <td th:text="${offer.promoted}"></td>
+        </tr>
+
+    </table>
+
+
+</div>
+</body>
+</html>

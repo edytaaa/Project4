@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Developers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="margin: auto; max-width: 600px">
+
+    <h2>Dodawanie lokalu</h2>
+
+    <form method="post" action="/addOffer" th:object="${offer}">
+        <input type="hidden" th:field="*{investment}"/>
+
+        <div class="form-group">
+            <label for="meterage">Metraż:</label>
+            <input th:field="*{meterage}" type="number" class="form-control" id="meterage" placeholder="Wpisz metraż"/>
+        </div>
+
+        <div class="form-group">
+            <label for="floor">Numer piętra:</label>
+            <input th:field="*{floor}" type="number" class="form-control" id="floor" placeholder="Wpisz numer piętra"/>
+        </div>
+
+        <div class="form-group">
+            <label for="rooms">Ilości pokoi:</label>
+            <input th:field="*{rooms}" type="number" class="form-control" id="rooms" placeholder="Wpisz ilość pokoi"/>
+        </div>
+
+        <div class="form-group">
+            <label for="url">Rzut mieszkania:</label>
+            <input th:field="*{url}" type="text" class="form-control" id="url" placeholder="Wpisz adres url"/>
+        </div>
+
+        <div class="form-group">
+            <label for="nazwa">Cena:</label>
+            <input th:field="*{price}" type="number" class="form-control" id="nazwa" placeholder="Wpisz cenę"/>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Opis oferty:</label>
+            <textarea class="form-control" rows="4" th:field="*{description}" id="description" placeholder="Opis oferty"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Wybierz stan mieszkania:</label>
+            <select th:field="*{state}" class="form-control" id="category">
+                <option value="default">Wybierz...</option>
+                <option th:each=" state: ${states}" th:value="${state.name()}" th:text="${state.plState}"></option>
+            </select>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+            <input th:field="*{promoted}" type="checkbox" class="custom-control-input" id="promoted">
+            <label class="custom-control-label" for="promoted">Zaznacz jeżeli mieszkanie promowane</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+
+    </form>
+
+
+</div>
+</body>
+</html>

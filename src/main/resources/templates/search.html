@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Developers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="margin: auto; max-width: 600px">
+
+    <h2>Wyszukiwanie lokali:</h2>
+    <form method="get" action="/find">
+        <div class="form-group">
+            <label for="Meraż1">Metraż min.:</label>
+            <input type="number" class="form-control" id="Meraż1" name="meterage1" placeholder="Podaj metraż min."/>
+        </div>
+
+        <div class="form-group">
+            <label for="Meraż2">Metraż max.:</label>
+            <input type="number" class="form-control" id="Meraż2" name="meterage2" placeholder="Podaj metraż max."/>
+        </div>
+
+        <div class="form-group">
+            <label for="price1">Cena min.:</label>
+            <input type="number" class="form-control" id="price1" name="price1" placeholder="Podaj cenę min."/>
+        </div>
+
+        <div class="form-group">
+            <label for="price2">Cena max.:</label>
+            <input type="number" class="form-control" id="price2" name="price2" placeholder="Podaj cenę max."/>
+        </div>
+
+        <div class="form-group">
+            <label for="miasto">Miasto:</label>
+            <input type="tekst" class="form-control" id="miasto" name="city" placeholder="Podaj miasto."/>
+        </div>
+
+        <div class="form-group">
+            <p><b>Podaj parametr wyszukiwania:</b></p>
+            <div class="form-check">
+                <input class="form-check-input1" type="radio" name="column" id="kolumna1" value="price">
+                <label class="form-check-label1" for="kolumna1">Cena</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input1" type="radio" name="column" id="kolumna2" value="meterage">
+                <label class="form-check-label1" for="kolumna2">Metraż</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <p><b>Podaj kolejność wyszukiwania:</b></p>
+            <div class="form-check">
+                <input class="form-check-input2" type="radio" name="order" id="kolejnosc1" value="asc">
+                <label class="form-check-labe2" for="kolejnosc1">Rosnąco</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input2" type="radio" name="order" id="kolejnosc2" value="desc">
+                <label class="form-check-labe2" for="kolejnosc2">Malejąco</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Szukaj</button>
+
+    </form>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Developers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div style="margin: auto; max-width: 600px">
+
+    <h2>Dodawanie inwestycji</h2>
+
+    <form method="post" action="/addInvestment" th:object="${investment}">
+        <input type="hidden" th:field="*{developer}"/>
+
+            <div class="form-group">
+                <label for="nazwa">Nazwa:</label>
+                <input th:field="*{name}" type="text" class="form-control" id="nazwa" placeholder="Wpisz nazwę"/>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Opis:</label>
+                <input th:field="*{description}" type="text" class="form-control" id="description" placeholder="Opis inwestycji"/>
+            </div>
+
+            <div class="form-group">
+                <label for="url">Odnośnik do strony www:</label>
+                <input th:field="*{url}" type="text" class="form-control" id="url" placeholder="Wpisz adres url"/>
+            </div>
+
+            <div class="form-group">
+                <label for="finishDate">Termin ukończenia inwestycji:</label>
+                <input th:field="*{finishDate}" type="date" class="form-control" id="finishDate" placeholder="Wpisz termin ukończenia"/>
+            </div>
+
+        <h4>Lokalizacja inwestycji:</h4>
+
+            <div class="form-group">
+                <label for="city">Miasto:</label>
+                <input th:field="*{city}" type="text" class="form-control" id="city" placeholder="Wpisz nazwę miast"/>
+            </div>
+
+            <div class="form-group">
+                <label for="street">Ulica:</label>
+                <input th:field="*{street}" type="text" class="form-control" id="street" placeholder="Wpisz nazwę ulicy"/>
+            </div>
+
+            <div class="form-group">
+                <label for="number">Numer budynku:</label>
+                <input th:field="*{number}" type="number" class="form-control" id="number" placeholder="Wpisz numer budynku"/>
+            </div>
+
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+
+    </form>
+
+
+</div>
+</body>
+</html>
